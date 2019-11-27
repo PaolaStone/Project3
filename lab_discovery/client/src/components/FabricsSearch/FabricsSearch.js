@@ -5,7 +5,7 @@ import { Table } from 'reactstrap';
 import SearchBy from '../Search';
 // import List from '../List';
 
-const loadData = () => JSON.parse(JSON.stringify(PortsList));
+// const loadData = () => JSON.parse(JSON.stringify(PortsList));
 
 class FabricsSearch extends React.Component {
     render() {

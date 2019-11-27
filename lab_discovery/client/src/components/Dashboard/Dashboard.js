@@ -13,8 +13,8 @@ function handleClick(e) {
 
 const Dashboard = (props) => {
     return (
-        <div className="container">
-            <div className= "row">
+        <div >
+            {/* <div className= "row">
                 <div className="col col-md-6">
                     <Card body inverse color="warning" style={{ height: '300px' }}>
                         <CardTitle>Fabrics</CardTitle>
@@ -66,7 +66,7 @@ const Dashboard = (props) => {
                         <Button color="secondary">Go</Button>
                     </Card>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 

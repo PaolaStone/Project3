@@ -5,7 +5,8 @@ mongoose.promise = Promise;
 const allPortsSchema = new Schema({
     ID: { 
         type: Number, 
-        required: true 
+        required: true,
+        unique: true
     },
     SwitchName: { 
         type: String, 

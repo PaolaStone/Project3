@@ -1,0 +1,38 @@
+.col-sm-2 {
+    /* margin: 0px; */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    
+}
+.navbar {
+    margin: 0px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-radius: 0 !important;
+    text-align: center;
+    background-color: black !important;
+    font-size: 30px !important;
+}
+.jumbotron {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background-color: darkgray !important;
+    border-radius: 0 !important;
+}
+.card{
+    border-radius: 0 !important;
+    text-align: center;
+    font-size: 30px;
+}
+
+.col-md-2 {
+text-align: left;
+}
+.col-md-9 {
+color: gray 
+}
+.col-md-1 {
+
+}
