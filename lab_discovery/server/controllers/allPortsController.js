@@ -1,11 +1,25 @@
 const db = require("../models");
 
-module.exports = {
-  findAll: function(req, res) {
-      db.allPorts
-        .find({})
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-  }
+const allPortsData = require("../db/seed/PortsList")
 
-};
+
+console.log(allPortsData)
+
+db.allPorts.collection.insertMany(allPortsData, function (err, res){
+  if (err) {
+    return console.error(err);
+  }else{
+    console.log("info inserted")
+  }
+})
+
+// module.exports = {
+//   let 
+  
+// }
+
+
+// allPorts.collection.insertMany(data,function(err,r){
+  
+// })
+;

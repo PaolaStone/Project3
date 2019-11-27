@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 mongoose.promise = Promise;
 
-const AllPortsSchema = new Schema({
+const allPortsSchema = new Schema({
     ID: { 
         type: Number, 
         required: true 
@@ -36,6 +36,6 @@ const AllPortsSchema = new Schema({
     }
 });
 
-const AllPorts = mongoose.model('AllPorts', AllPortsSchema);
+const allPorts = mongoose.model('allPorts', allPortsSchema);
 
-module.exports = AllPorts;
+module.exports = allPorts;

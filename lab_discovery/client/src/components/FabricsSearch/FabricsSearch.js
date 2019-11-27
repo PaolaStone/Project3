@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Table } from 'reactstrap';
-import PortsList from './PortsList.json';
+// import PortsList from './PortsList.json';
 import SearchBy from '../Search';
 // import List from '../List';
 
@@ -14,7 +14,7 @@ class FabricsSearch extends React.Component {
                 <br/>
                 <SearchBy/>
                 <br/>
-                <Table striped>
+                {/* <Table striped>
                     <thead>
                         <tr>
                             <th>Switch </th>
@@ -40,7 +40,7 @@ class FabricsSearch extends React.Component {
                             })
                             }
                         </tbody>
-                </Table>
+                </Table> */}
             </div>
         )
     };
