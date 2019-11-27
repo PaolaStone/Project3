@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Table } from 'reactstrap';
 import PortsList from './PortsList.json';
-// import Search from './Search';
+import SearchBy from '../Search';
 // import List from '../List';
 
 const loadData = () => JSON.parse(JSON.stringify(PortsList));
@@ -10,7 +10,10 @@ const loadData = () => JSON.parse(JSON.stringify(PortsList));
 class FabricsSearch extends React.Component {
     render() {
         return (
-            <div>
+            <div className="container">
+                <br/>
+                <SearchBy/>
+                <br/>
                 <Table striped>
                     <thead>
                         <tr>

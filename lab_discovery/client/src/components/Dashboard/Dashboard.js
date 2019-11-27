@@ -1,11 +1,13 @@
 import React from "react";
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
 import FabricsSearch from "../FabricsSearch";
+import "./Dashboard.css";
+
 
 function handleClick(e) {
     e.preventDefault();
     console.log('The link was clicked.');  
-    <FabricsSearch/>
+    // <FabricsSearch/>
 }
 
 
@@ -14,7 +16,7 @@ const Dashboard = (props) => {
         <div className="container">
             <div className= "row">
                 <div className="col col-md-6">
-                    <Card body inverse color="warning">
+                    <Card body inverse color="warning" style={{ height: '300px' }}>
                         <CardTitle>Fabrics</CardTitle>
                         <CardText></CardText>
                         <Button onClick={handleClick
@@ -24,7 +26,7 @@ const Dashboard = (props) => {
                     </Card>
                 </div>
                 <div className="col col-md-6">
-                    <Card body inverse color="info">
+                    <Card body inverse color="info" style={{ height: '300px' }}>
                         <CardTitle>Maps</CardTitle>
                         <CardText></CardText>
                         <Button color="secondary">Go</Button>
@@ -34,14 +36,14 @@ const Dashboard = (props) => {
             <br/>
             <div className="row">
                 <div className="col col-md-6">
-                    <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
+                    <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333', height: '300px' }}>
                         <CardTitle>IP Database</CardTitle>
                         <CardText></CardText>
                         <Button>Go</Button>
                     </Card>
                 </div>
                 <div className="col col-md-6">
-                    <Card body inverse color="danger">
+                    <Card body inverse color="danger" style={{ height: '300px' }}>
                         <CardTitle>Wiki</CardTitle>
                         <CardText></CardText>
                         <Button color="secondary">GO</Button>
@@ -51,14 +53,14 @@ const Dashboard = (props) => {
             <br/>
             <div className="row">
                 <div className="col col-md-6">
-                    <Card body inverse color="primary">
+                    <Card body inverse color="primary" style={{ height: '300px' }}>
                         <CardTitle>Import</CardTitle>
                         <CardText></CardText>
                         <Button color="secondary">Go</Button>
                     </Card>
                 </div>
                 <div className="col col-md-6">
-                    <Card body inverse color="success">
+                    <Card body inverse color="success" style={{ height: '300px' }}>
                         <CardTitle>Add</CardTitle>
                         <CardText></CardText>
                         <Button color="secondary">Go</Button>
