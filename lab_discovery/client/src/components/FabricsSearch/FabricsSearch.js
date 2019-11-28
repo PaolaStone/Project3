@@ -1,20 +1,45 @@
 import React from 'react';
 
 import { Table } from 'reactstrap';
-// import PortsList from './PortsList.json';
 import SearchBy from '../Search';
-// import List from '../List';
+import axios from 'axios'
 
-// const loadData = () => JSON.parse(JSON.stringify(PortsList));
+
+
 
 class FabricsSearch extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            allPorts:[]
+        }
+    }
+    
+    componentDidMount() {
+        axios.get('./server/routes/api/allPorts')
+        .then (res => {
+            this.setState({
+                allPorts:res.data
+                
+            })
+            .then(profileState => {
+                console.log(JSON.stringify(this.state.allPorts))
+            })
+            .catch((error) => {
+                console.log(error)
+                
+            })
+        }
+            
+        
+        )
+    }
+
     render() {
         return (
-            <div className="container">
-                <br/>
+            <div>
                 <SearchBy/>
-                <br/>
-                {/* <Table striped>
+                <Table striped>
                     <thead>
                         <tr>
                             <th>Switch </th>
@@ -25,26 +50,31 @@ class FabricsSearch extends React.Component {
                             <th>Air Rack</th>
                             <th>Air Port</th>
                         </tr>
-                        </thead>
-                        <tbody>
-                            {PortsList.map(function(port, i) {
-                                return <tr port={port} Key={i}>      
-                                    <td>{PortsList[i].SwitchName}</td>
-                                    <td>{PortsList[i].Port}</td>
-                                    <td>{PortsList[i].Status}</td>
-                                    <td>{PortsList[i].SystemName_Port}</td>
-                                    <td>{PortsList[i].SystemWWN}</td>
-                                    <td>{PortsList[i].AirRackName}</td>
-                                    <td>{PortsList[i].AirRackPort}</td>
-                                </tr>
-                            })
-                            }
-                        </tbody>
-                </Table> */}
-            </div>
+                    </thead>
+                    <tbody>
+                        {this.state.allPorts.map( ports => 
+                        <tr >      
+                        <td>{ports.SwitchName}</td>
+                        <td>{ports.Status}</td>
+                        <td>{ports.SystemName_Port}</td>
+                        <td>{ports.SystemWWN}</td>
+                        <td>{ports.AirRackName}</td>
+                        <td>{ports.AirRackPort}</td>
+                    </tr>
+                            )}
+                        
+                    </tbody>
+                </Table>
+           </div>
         )
-    };
+            
+        
+
+        
+
+    }
 }
 
-   
 export default FabricsSearch;
+
+   

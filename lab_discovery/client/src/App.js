@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	
-} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import LoginForm from './pages/Auth/LoginForm';
 import SignupForm from './pages/Auth/SignupForm';
 import NavBar from "./components/NavBar";
 import AUTH from './utils/AUTH';
 import Dashboard from './components/Dashboard'
-import FabricsSearch from './components/FabricsSearch'
+
 
 class App extends Component {
   
@@ -78,11 +73,8 @@ class App extends Component {
 					<NavBar user={this.state.user} logout={this.logout}/>
 					<div className="main-view">
 						<Dashboard/>
-						<FabricsSearch/>
-						<Switch>
-							{/* <Route exact path="/allPorts" component={() => List}/> */}
-							{/* <Route exact path="/ReservePorts" component={() => ReservePorts}/> */}
-						</Switch>
+					
+						
 					</div>
 				</div>
         		)}

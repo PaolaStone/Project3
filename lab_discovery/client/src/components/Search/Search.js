@@ -1,15 +1,48 @@
 import React from 'react';
-import { Form, Input } from 'reactstrap';
+import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
+import "./Search.css";
 
 const SearchBy = (props) => {
+  
+    
+  
   return (
-    <Form>
-        <Input type="select" bsSize="df">
-            <option> Search by System Name </option>
-            <option> Search by wwn </option>
-        </Input>
+    <div className="container">
+      <br/>
+      <h2>Search by system name or wwn</h2>
+      <br/>
+      <div className="row">
+        <div className="col-md-4">
+          
+        <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <Button>Name</Button>
+            </InputGroupAddon>
+            <Input />
+          </InputGroup>
+          <br />
+          <InputGroup placeholder = "System name"></InputGroup>
+        </div>
+        <div className="col-md-4">
+
+      </div>
+        
+        <div className="col-md-4">
+        <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <Button>wwn</Button>
+            </InputGroupAddon >
+            <Input />
+          </InputGroup>
+          <br />
+          <InputGroup placeholder = "Port wwn"></InputGroup>
+        </div>
+        
+        
+      </div>
       
-    </Form>
+    </div>
+    
   );
 }
 

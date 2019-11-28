@@ -1,8 +1,8 @@
-const router = require("express").Router();
+const express = require('express');
+const router = express.Router();
 const allPortsController = require("../../controllers/allPortsController");
 
-// router.route("/allPorts")
-//   .get(allports.findAll)
-//   .post(booksController.create);
+// this route is just used to get allports
+router.get('/allPorts', allPortsController.getallPorts)
 
 module.exports = router;
