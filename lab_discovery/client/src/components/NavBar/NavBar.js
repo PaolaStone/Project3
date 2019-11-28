@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route,Link } from 'react-router-dom';
 import { Col } from '../Grid';
 import { Card, CardTitle, CardText } from 'reactstrap';
 import "./NavBar.css";
-import FabricsSearch from '../FabricsSearch'
+import Fabrics from '../Fabrics'
 
 const NavBar = (props) => {
   let greeting;
@@ -48,7 +48,7 @@ const NavBar = (props) => {
             <div className= "col-sm-2">
               <Card body inverse color="warning" style={{ height: '100px' }}>
                 <CardTitle >
-                  <Link to={'/FabricsSearch'}> Fabrics</Link>
+                  <Link to={'/Fabrics'}> Fabrics</Link>
                 
                 </CardTitle>
                 <CardText>
@@ -94,7 +94,7 @@ const NavBar = (props) => {
           
         </div>
         <Switch>
-            <Route exact path='/FabricsSearch' component={ FabricsSearch } />
+            <Route exact path='/Fabrics' component={ Fabrics } />
           </Switch>
       </div>
         
