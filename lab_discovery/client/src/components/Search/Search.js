@@ -3,13 +3,10 @@ import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
 import "./Search.css";
 
 const SearchBy = (props) => {
-  
-    
-  
   return (
     <div className="container">
       <br/>
-      <h2>Search by system name or wwn</h2>
+      <h5>Search by system name or wwn</h5>
       <br/>
       <div className="row">
         <div className="col-md-4">

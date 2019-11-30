@@ -3,7 +3,10 @@ import { BrowserRouter as Router, Switch, Route,Link } from 'react-router-dom';
 import { Col } from '../Grid';
 import { Card, CardTitle, CardText } from 'reactstrap';
 import "./NavBar.css";
-import Fabrics from '../Fabrics'
+// import Search from '../Search'
+import ReservePorts from '../ReservePorts'
+
+import FabricsSearchPage from '../../pages/Search'
 
 const NavBar = (props) => {
   let greeting;
@@ -27,8 +30,8 @@ const NavBar = (props) => {
   return (
     <Router>
       <div>
-        <div className= "jumbotron">
-            <nav className="navbar navbar-dark bg-dark">
+        
+            <nav className="navbar navbar-dark bg-dark" style={{height: '50px'}} >
               <Col size="md-2">
                 <Link to="/" className="navbar-brand">Home</Link>
               </Col>
@@ -43,65 +46,68 @@ const NavBar = (props) => {
                 </div>
               </Col>
             </nav>
-          <br/>
+         
           <div className="row">
             <div className= "col-sm-2">
-              <Card body inverse color="warning" style={{ height: '100px' }}>
+              <Card body inverse color="warning" style={{ height: '60px' }}>
                 <CardTitle >
-                  <Link to={'/Fabrics'}> Fabrics</Link>
-                
+                   Fabrics
+                   <br/>
+                   <Link className="inMenu" to= {'/Search'}>Search  </Link> |
+                  <Link className="inMenu"to= {'/ReservePorts'}>  Reserve  </Link>
                 </CardTitle>
                 <CardText>
-                
+                  
                 </CardText>
               </Card>
             </div>
             <div className= "col-sm-2">
-              <Card body inverse color="info" style={{ height: '100px' }}>
-                <CardTitle>Maps</CardTitle>
+              <Card body inverse color="info" style={{ height: '60px' }}>
+                <CardTitle>
+                  Maps
+                  <br/>
+                  <Link className="inMenu" to= {'#'}>Lab 1  </Link> |
+                  <Link className="inMenu"to= {'#'}>  Lab 3  </Link>
+                </CardTitle>
+                
                 <CardText></CardText>
               </Card>
             </div>
             <div className= "col-sm-2">
-              <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333', height: '100px' }}>
+              <Card body inverse style={{ backgroundColor: 'purple', borderColor: 'purple', height: '60px' }}>
                 <CardTitle>Network</CardTitle>
                 <CardText></CardText>
               </Card>
             </div>
             <div className= "col-sm-2">
-              <Card body inverse color="danger" style={{ height: '100px' }}>
+              <Card body inverse color="danger" style={{ height: '60px' }}>
                 <CardTitle>Wiki</CardTitle>
                 <CardText></CardText>
               </Card>
             </div>
             <div className= "col-sm-2">
-              <Card body inverse color="primary" style={{ height: '100px' }}>
+              <Card body inverse color="primary" style={{ height: '60px' }}>
                 <CardTitle>Import</CardTitle>
                 <CardText></CardText>
               </Card>
             </div>
             <div className= "col col-sm-2">
-              <Card body inverse color="success" style={{ height: '100px' }}>
+              <Card body inverse color="success" style={{ height: '60px' }}>
                 <CardTitle>Add</CardTitle>
                 <CardText></CardText>
               </Card>
             </div>
           </div>
-
-          
         
-          <br/>
-          
-        </div>
         <Switch>
-            <Route exact path='/Fabrics' component={ Fabrics } />
+            
+            <Route exact path='/Search' component={ FabricsSearchPage } />
+            <Route exact path='/ReservePorts' component={ ReservePorts } />
+
           </Switch>
       </div>
         
     </Router>
-      
-    
-    
   )
 };
 

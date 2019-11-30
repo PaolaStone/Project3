@@ -73,8 +73,6 @@ class App extends Component {
 					<NavBar user={this.state.user} logout={this.logout}/>
 					<div className="main-view">
 						<Dashboard/>
-					
-						
 					</div>
 				</div>
         		)}

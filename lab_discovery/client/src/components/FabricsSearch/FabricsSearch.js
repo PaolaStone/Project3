@@ -26,21 +26,22 @@ export default class FabricsSearch extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className="container-fluid">
                 
-                <div className="container-fluid">
+                <div >
                 {this.state.loading || !this.state.ports ? (
-                <div>loading</div> 
+                <div>Loading...</div> 
                 ) : (
                     <div>
+                        
                         <Table striped>
                             <thead>
                                 <tr>
-                                    <th>Switch </th>
+                                    <th>Switch Name </th>
                                     <th>Port</th>
                                     <th>Status</th>
-                                    <th>System Name and Port</th>
-                                    <th>System www</th>
+                                    <th>Name_Port</th>
+                                    <th>Port www</th>
                                     <th>Air Rack</th>
                                     <th>Air Port</th>
                                 </tr>
