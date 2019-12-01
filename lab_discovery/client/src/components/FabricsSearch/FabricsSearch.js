@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from 'reactstrap';
-import SearchBy from '../Search';
+// import SearchBy from '../Search';
 
 
 export default class FabricsSearch extends React.Component {
@@ -18,7 +18,6 @@ export default class FabricsSearch extends React.Component {
         const data = await response.json();
         
         console.log("this is data " + JSON.stringify(data))
-        console.log
         console.log(response.status)
         this.setState({ports: data.allPorts, loading: false})
 
@@ -41,7 +40,7 @@ export default class FabricsSearch extends React.Component {
                                     <th>Port</th>
                                     <th>Status</th>
                                     <th>Name_Port</th>
-                                    <th>Port www</th>
+                                    <th>Port wwn</th>
                                     <th>Air Rack</th>
                                     <th>Air Port</th>
                                 </tr>
@@ -69,61 +68,3 @@ export default class FabricsSearch extends React.Component {
         )
     }
 }
-
-
-
-    // render() {
-    //     return (
-    //         <div>
-    //             <SearchBy/>
-    //             <Table striped>
-    //                 <thead>
-    //                     <tr>
-    //                         <th>Switch </th>
-    //                         <th>Port</th>
-    //                         <th>Status</th>
-    //                         <th>System Name and Port</th>
-    //                         <th>System www</th>
-    //                         <th>Air Rack</th>
-    //                         <th>Air Port</th>
-    //                     </tr>
-    //                 </thead>
-                    {/* {this.state.ports.length ? (
-                        
-                        <tbody>
-                            {this.state.ports.map((port,i) => (
-                                
-                                <tr key={port.i}>
-                                    <td>{port.i.SwitchName}</td>
-                                    <td>{port.i.Status}</td>
-                                    <td>{port.i.SystemName_Port}</td>
-                                    <td>{port.i.SystemWWN}</td>
-                                    <td>{port.i.AirRackName}</td>
-                                    <td>{port.i.AirRackPort}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-
-
-                    
-                    ) : (
-                        console.log("noting to display")
-                        // <h3>No Results to Display</h3>
-                    )
-
-                    } */}
-                   
-//                 </Table>
-//            </div>
-//         )
-            
-        
-
-        
-
-//     }
-// }
-
-// export default FabricsSearch;
-
-   
