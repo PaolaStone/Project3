@@ -24,6 +24,7 @@ export default class FabricsSearch extends React.Component {
 
     }
     
+    
     render() {
         const columns = [
             {
@@ -91,6 +92,15 @@ export default class FabricsSearch extends React.Component {
             },
 
         ]
+        function filterCaseInsensitive(filter, row) {
+            const id = filter.pivotId || filter.id;
+            return (
+                row[id] !== undefined ?
+                    String(row[id].toLowerCase()).startsWith(filter.value.toLowerCase())
+                :
+                    true
+            );
+        }
         return (
             <div className="container-fluid">
                 {this.state.loading || !this.state.ports ? (
@@ -103,6 +113,7 @@ export default class FabricsSearch extends React.Component {
                             defaultPageSize= { 10 }
                             showPageSizeOptions= { true }
                             minRows= { 0 }
+                            defaultFilterMethod={filterCaseInsensitive}
                         />
                     
                 )}
