@@ -2,12 +2,12 @@ const db = require("../models");
 
 
 module.exports = {
-  getPorts: (req, res) => {
-    db.allPorts.find().exec((err, allPorts) => {
+  getmdaPorts: (req, res) => {
+    db.mdaPorts.find().exec((err, mdaPorts) => {
       if (err) {
         return res.json();
       }
-      return res.json ({allPorts})
+      return res.json ({mdaPorts})
     })
   }
 }

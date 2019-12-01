@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+mongoose.promise = Promise;
 
-const MDAPortTrackingSchema = new Schema({
+const mdaPortsSchema = new Schema({
     AirRackName: { 
         type: String, 
         required: true },
@@ -28,10 +29,11 @@ const MDAPortTrackingSchema = new Schema({
     MDAPort: { 
         type: String, 
         required: false 
-    },
+    }
     
-});
+}, mongoose.set('debug', true));
 
-const MDAPortTracking = mongoose.model("MDAPortTracking", MDAPortTrackingSchema);
+const mdaPorts = mongoose.model('mdaPorts', mdaPortsSchema);
 
-module.exports = MDAPortTracking;
+
+module.exports = mdaPorts;
