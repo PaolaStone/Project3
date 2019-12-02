@@ -67,23 +67,23 @@ class App extends Component {
 	render() {
 		return (
 			<Router>
-			<div className="App">
-        		{ this.state.loggedIn && (
-				<div>
-					<NavBar user={this.state.user} logout={this.logout}/>
-					<div className="main-view">
-						<Dashboard/>
+				<div className="App">
+					{ this.state.loggedIn && (
+					<div>
+						<NavBar user={this.state.user} logout={this.logout}/>
+						{/* <div className="main-view"> */}
+							<Dashboard/>
+						{/* </div> */}
 					</div>
+					)}
+					{ !this.state.loggedIn && (
+					<div className="auth-wrapper" style={{paddingTop:40}}>
+						<Route exact path="/" component={() => <LoginForm login={this.login}/>} />
+						<Route exact path="/login" component={() => <LoginForm user={this.login}/>} />
+						<Route exact path="/signup" component={SignupForm} />
+					</div>
+					)}
 				</div>
-        		)}
-				{ !this.state.loggedIn && (
-				<div className="auth-wrapper" style={{paddingTop:40}}>
-					<Route exact path="/" component={() => <LoginForm login={this.login}/>} />
-					<Route exact path="/login" component={() => <LoginForm user={this.login}/>} />
-					<Route exact path="/signup" component={SignupForm} />
-				</div>
-				)}
-			</div>
 			</Router>
 		)
 	}

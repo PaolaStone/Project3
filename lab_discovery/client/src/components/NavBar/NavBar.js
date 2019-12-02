@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route,Link } from 'react-router-dom';
 import { Col } from '../Grid';
 import { Card, CardTitle, CardText } from 'reactstrap';
 import "./NavBar.css";
-// import Search from '../Search'
 import ReservePorts from '../ReservePorts'
 
 import FabricsSearchPage from '../../pages/Search'
@@ -30,21 +29,20 @@ const NavBar = (props) => {
   return (
     <Router>
       <div>
-        
-            <nav className="navbar navbar-dark bg-dark" style={{height: '50px'}} >
-              <Col size="md-2">
-                <Link to="/" className="navbar-brand">Home</Link>
-              </Col>
-              <Col size="md-9">
-                <div className="float-right">
-                  {greeting}
-                </div>
-              </Col>
-              <Col size="md-1">
-                <div className="float-right">
-                  <Link to="#" className="logout" onClick={props.logout}>Logout</Link>
-                </div>
-              </Col>
+        <nav className="navbar navbar-dark bg-dark" style={{height: '50px'}} >
+          <Col size="md-2">
+            <Link to="/" className="navbar-brand">Home</Link>
+          </Col>
+          <Col size="md-9">
+              <div className="float-right">
+                {greeting}
+              </div>
+          </Col>
+          <Col size="md-1">
+            <div className="float-right">
+              <Link to="#" className="logout" onClick={props.logout}>Logout</Link>
+            </div>
+          </Col>
             </nav>
          
           <div className="row">
@@ -53,8 +51,8 @@ const NavBar = (props) => {
                 <CardTitle >
                    Fabrics
                    <br/>
-                   <Link className="inMenu" to= {'/Search'}>Search  </Link> |
-                  <Link className="inMenu"to= {'/ReservePorts'}>  Reserve  </Link>
+                   <Link className="inMenu" to= {'/Search'}>Search </Link> |
+                  <Link className="inMenu"to= {'/ReservePorts'}> Reserve </Link>
                 </CardTitle>
                 <CardText>
                   
@@ -67,7 +65,7 @@ const NavBar = (props) => {
                   Maps
                   <br/>
                   <Link className="inMenu" to= {'#'}>Lab 1  </Link> |
-                  <Link className="inMenu"to= {'#'}>  Lab 3  </Link>
+                  <Link className="inMenu"to= {'#'}> Lab 3  </Link>
                 </CardTitle>
                 
                 <CardText></CardText>

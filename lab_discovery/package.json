@@ -42,6 +42,7 @@
     "react-dom": "^16.12.0",
     "react-table": "^6.10.3",
     "react-virtualized": "^9.21.2",
-    "reactstrap": "^8.1.1"
+    "reactstrap": "^8.1.1",
+    "styled-components": "^4.4.1"
   }
 }
