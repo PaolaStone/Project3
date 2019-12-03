@@ -3,9 +3,13 @@ import { BrowserRouter as Router, Switch, Route,Link } from 'react-router-dom';
 import { Col } from '../Grid';
 import { Card, CardTitle, CardText } from 'reactstrap';
 import "./NavBar.css";
+
+import Dashboard from '../Dashboard'
 import ReservePorts from '../ReservePorts'
 
-import FabricsSearchPage from '../../pages/Search'
+import FabricsSearchPage from '../FabricsSearch'
+
+import Maps from '../Maps'
 
 const NavBar = (props) => {
   let greeting;
@@ -25,7 +29,7 @@ const NavBar = (props) => {
 			</Fragment>
 		)
   }
-  
+
   return (
     <Router>
       <div>
@@ -64,7 +68,7 @@ const NavBar = (props) => {
                 <CardTitle>
                   Maps
                   <br/>
-                  <Link className="inMenu" to= {'#'}>Lab 1  </Link> |
+                  <Link className="inMenu" to= {'/Maps'}>Lab 1  </Link> |
                   <Link className="inMenu"to= {'#'}> Lab 3  </Link>
                 </CardTitle>
                 
@@ -95,17 +99,21 @@ const NavBar = (props) => {
                 <CardText></CardText>
               </Card>
             </div>
+            
           </div>
-        
+          
         <Switch>
             
             <Route exact path='/Search' component={ FabricsSearchPage } />
             <Route exact path='/ReservePorts' component={ ReservePorts } />
+            <Route exact path='/Maps' component={ Maps} />
 
           </Switch>
+          <Dashboard/>
       </div>
-        
+      
     </Router>
+    
   )
 };
 

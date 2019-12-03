@@ -5,11 +5,25 @@ import ReactTable  from 'react-table'
 
 import 'react-table/react-table.css'
 
-class Reserve extends React.Component {
+export default class Reserve extends React.Component {
     reservePort = event => {
         event.preventDefault()
+        // alert("this is the id to reserve ports  " + this.props.id + " and this is system: " + this.props.system)
         
-       alert("this is the id to reserve ports  " + this.props.id )
+        
+        
+       const reserveObject = {
+        SwitchName: this.props.SwitchName,
+        Port: this.props.Port,
+        Status: this.props.Status,
+        SystemName_Port: this.props.SystemName_Port,
+        SystemWWN: this.props.SystemWWN,
+        AirRackName: this.props.AirRackName,
+        AirRackPort: this.props.AirRackPort
+        }
+        console.log("this is data " + JSON.stringify(reserveObject))
+        
+        
     }
     
     onChangeStatus (e) {
@@ -48,106 +62,27 @@ class Reserve extends React.Component {
         }
     
        
-
-    render() {
-        
-        return <button onClick={this.reservePort}> Reserve </button>
-    }
-}
-
-export default class ReservePorts extends React.Component {
-    
-    state = {
-        loading: true,
-        opens: [],
-        columns: []
-    }
-
-    async componentDidMount(){
-        const url = '/api/opens'
-        const response = await fetch(url);
-        // console.log(response.ok)
-        // console.log("this is response " + response)
-        const data = await response.json();
-        
-        // console.log("this is data " + JSON.stringify(data))
-        // console.log(response.status)
-        this.setState({opens: data.opens, loading: false})
-
-    }
-     
-    render() {
-        const columns = [
-            {
-                Header: "Switch Name",
-                accessor: "SwitchName",
-                resizable: false,
-                width: 285,
-                sortable: true,
-                multiSort: true,
-                filterable: true
-            },
-
-            {
-                Header: "Port",
-                accessor: "Port",
-                resizable: false,
-                width: 115,
-                sortable: true,
-                multiSort: true,
-                filterable: true
-            },
-
-            {
-                Header: "Status",
-                accessor: "Status",
-                resizable: false,
-                width: 156,
-            },
-            
-            {
-                Header: "Action",
-                accessor: "",
-                width: 100,
-                Cell: function(props) {
-                    return (
-                        <span>
-                        <   Reserve id={props.original._id}/>
-                        </span>
-                    )
-                    
-                }
-            }
-
-        ]
-
-        function filterCaseInsensitive(filter, row) {
-            const id = filter.pivotId || filter.id;
-            return (
-                row[id] !== undefined ?
-                    String(row[id].toLowerCase()).startsWith(filter.value.toLowerCase())
-                :
-                    true
-            );
+        state = {
+            loading: true,
+            ports: [],
+            columns: []
         }
-        
+    
+        async componentDidMount(){
+            const url = '/api/ports'
+            const response = await fetch(url);
+            // console.log(response.ok)
+            // console.log("this is response " + response)
+            const data = await response.json();
+            
+            // console.log("this is data " + JSON.stringify(data))
+            // console.log(response.status)
+            this.setState({ports: data.allPorts, loading: false})
+    
+        }
+
+    render() {
         return (
-            <div className="container-fluid">
-                {this.state.loading || !this.state.opens ? (
-                    <div></div>
-                ) : (
-                    
-                        <ReactTable className="-striped -highlight"
-                            data= { this.state.opens }
-                            columns= { columns }
-                            defaultPageSize= { 10 }
-                            showPageSizeOptions= { true }
-                            minRows= { 0 }
-                            defaultFilterMethod={filterCaseInsensitive}
-                        />
-                    
-                )}
-            </div>
-        )
+            <button onClick={this.reservePort} > View </button>)
     }
 }

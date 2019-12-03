@@ -1,3 +1,6 @@
+.hide{
+    visibility: hidden;
+}
 .col-sm-2 {
     /* margin: 0px; */
     padding-left: 0 !important;
