@@ -3,7 +3,7 @@ const router = express.Router();
 const portsController = require("../../controllers/portsController");
 const portsPutController = require("../../controllers/portsPutController");
 const opensController = require("../../controllers/opensController");
-// const mdaController = require("../../controllers/mdaController");
+const mdaController = require("../../controllers/mdaController");
 
 router.get('/ports', portsController.getPorts)
 router.get('/opens', opensController.getOpens)

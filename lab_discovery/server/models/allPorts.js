@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 mongoose.promise = Promise;
+const data = require("../db/seed/switchPorts")
 
 const allPortsSchema = new Schema({
     ID: { 
@@ -18,7 +19,7 @@ const allPortsSchema = new Schema({
     },
     Status: { 
         type: String, 
-        required: true 
+        required: false 
     },
     SystemName_Port: { 
         type: String, 
@@ -38,6 +39,14 @@ const allPortsSchema = new Schema({
 });
 
 const allPorts = mongoose.model('allPorts', allPortsSchema);
+
+// allPorts.create(data)
+//     .then(function(dballPorts) {
+//         console.log(dballPorts)
+//     })
+//     .catch(function(err) {
+//         console.log(err.message)
+//     })
 
 
 module.exports = allPorts;

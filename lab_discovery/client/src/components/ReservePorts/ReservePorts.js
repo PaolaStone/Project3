@@ -3,34 +3,34 @@ import React from 'react'
 // import ReactTable  from 'react-table'
 
 
-import 'react-table/react-table.css'
+// import 'react-table/react-table.css'
 import PortModal from '../PortModal'
 
 export default class Reserve extends React.Component {
+   
     reservePort = () => {
         
-       
         const reserveObject = {
-        SwitchName: this.props.SwitchName,
-        Port: this.props.Port,
-        Status: this.props.Status,
-        SystemName_Port: this.props.SystemName_Port,
-        SystemWWN: this.props.SystemWWN,
-        AirRackName: this.props.AirRackName,
-        AirRackPort: this.props.AirRackPort
+            SwitchName: this.props.SwitchName,
+            Port: this.props.Port,
+            Status: this.props.Status,
+            SystemName_Port: this.props.SystemName_Port,
+            SystemWWN: this.props.SystemWWN,
+            AirRackName: this.props.AirRackName,
+            AirRackPort: this.props.AirRackPort
         }
-        console.log("this is data " + JSON.stringify(reserveObject))
+        console.log("this is reserveObject " + JSON.stringify(reserveObject))
         
         
     }
     
-   
     render() {
+        console.log("this is reserveObject in render " + JSON.stringify(this.props.SwitchName))
         return (
             
            <PortModal reservePort={this.reservePort}/>
-            
-            )
+           
+        )
     }
 }
 

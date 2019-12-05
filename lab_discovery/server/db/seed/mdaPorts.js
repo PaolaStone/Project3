@@ -1,4 +1,4 @@
-[
+const mdaPorts = [
     {
       "AirRackName": "126AE_AIR/62AG_MDA",
       "AirRackPort": "B_P01",
@@ -31653,3 +31653,5 @@
       "MDAPort": ""
     }
    ]
+
+   module.exports = mdaPorts

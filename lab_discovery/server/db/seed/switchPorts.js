@@ -1,4 +1,4 @@
-[
+const allPorts = [
   {
     "ID": 1,
     "SwitchName": "L1-DCX-126AJ-SW01_VS50",
@@ -20160,3 +20160,5 @@
     "AirRackPort": " "
   }
  ]
+
+ module.exports = allPorts

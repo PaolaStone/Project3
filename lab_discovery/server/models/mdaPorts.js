@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 mongoose.promise = Promise;
+const data = require("../db/seed/mdaPorts")
 
 const mdaPortsSchema = new Schema({
     AirRackName: { 
@@ -36,4 +37,12 @@ const mdaPortsSchema = new Schema({
 const mdaPorts = mongoose.model('mdaPorts', mdaPortsSchema);
 
 
+// mdaPorts.create(data)
+//     .then(function(dbmdaPorts) {
+//         console.log(dbmdaPorts)
+//     })
+//     .catch(function(err) {
+//         console.log(err.message)
+//     })
+    
 module.exports = mdaPorts;

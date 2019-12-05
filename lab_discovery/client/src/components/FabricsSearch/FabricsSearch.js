@@ -112,6 +112,33 @@ export default class FabricsSearch extends React.Component {
                                 SystemWWN={ props.original.SystemWWN }
                                 AirRackName={ props.original.AirRackName }
                                 AirRackPort={ props.original.AirRackPort }
+                                
+                                //
+                                getTrProps={(state, rowInfo) => {
+                                    if (rowInfo && rowInfo.row) {
+                                      return {
+                                        onClick: (e) => {
+                                          this.setState({
+                                            selected: rowInfo.index
+                                            
+                                          }, console.log("This is selected  " + this.selected)
+                                          )
+                                          
+                                        },
+                                        style: {
+                                          background: rowInfo.index === this.state.selected ? '#00afec' : 'white',
+                                          color: rowInfo.index === this.state.selected ? 'white' : 'black'
+
+                                        }
+                                        
+                                      }
+                                      
+                                    }else{
+                                      return {}
+                                    }
+                                    
+                                  }
+                                }//
                             />
                         </span>
                     )
