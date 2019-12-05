@@ -7,7 +7,7 @@ import "./NavBar.css";
 import Dashboard from '../Dashboard'
 import ReservePorts from '../ReservePorts'
 
-import FabricsSearchPage from '../FabricsSearch'
+import FabricsSearch from '../FabricsSearch'
 
 import Maps from '../Maps'
 
@@ -104,7 +104,7 @@ const NavBar = (props) => {
           
         <Switch>
             
-            <Route exact path='/Search' component={ FabricsSearchPage } />
+            <Route exact path='/Search' component={ FabricsSearch } />
             <Route exact path='/ReservePorts' component={ ReservePorts } />
             <Route exact path='/Maps' component={ Maps} />
 

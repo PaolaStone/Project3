@@ -2,7 +2,7 @@ import React from 'react'
 // import styled from 'styled-components'
 import ReactTable  from 'react-table'
 import 'react-table/react-table.css'
-import Reserve from '../ReservePorts'
+import Search from '../SearchPorts'
 
 
 export default class FabricsSearch extends React.Component {
@@ -103,7 +103,7 @@ export default class FabricsSearch extends React.Component {
                 Cell: function(props) {
                     return (
                         <span>
-                            <Reserve 
+                            <Search
                                 id={ props.original._id}  
                                 SwitchName={ props.original.SwitchName }
                                 Port={ props.original.Port }
@@ -113,32 +113,6 @@ export default class FabricsSearch extends React.Component {
                                 AirRackName={ props.original.AirRackName }
                                 AirRackPort={ props.original.AirRackPort }
                                 
-                                //
-                                getTrProps={(state, rowInfo) => {
-                                    if (rowInfo && rowInfo.row) {
-                                      return {
-                                        onClick: (e) => {
-                                          this.setState({
-                                            selected: rowInfo.index
-                                            
-                                          }, console.log("This is selected  " + this.selected)
-                                          )
-                                          
-                                        },
-                                        style: {
-                                          background: rowInfo.index === this.state.selected ? '#00afec' : 'white',
-                                          color: rowInfo.index === this.state.selected ? 'white' : 'black'
-
-                                        }
-                                        
-                                      }
-                                      
-                                    }else{
-                                      return {}
-                                    }
-                                    
-                                  }
-                                }//
                             />
                         </span>
                     )
@@ -173,13 +147,7 @@ export default class FabricsSearch extends React.Component {
                             showPageSizeOptions= { true }
                             minRows= { 0 }
                             defaultFilterMethod={filterCaseInsensitive}
-                            // getTrProps={(state, rowInfo, column) => {
-                            //     return {
-                            //       style: {
-                            //         background: rowInfo.row.SystemName_Port !== " " ? 'green' : 'red'
-                            //       }
-                            //     }
-                            //   }}
+                           
                         />
                         
                 )}
