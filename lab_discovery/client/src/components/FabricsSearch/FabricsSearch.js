@@ -3,7 +3,7 @@ import React from 'react'
 import ReactTable  from 'react-table'
 import 'react-table/react-table.css'
 import Search from '../SearchPorts'
-
+import { Col, Row } from 'reactstrap';
 
 export default class FabricsSearch extends React.Component {
     
@@ -98,7 +98,7 @@ export default class FabricsSearch extends React.Component {
             {
                 Header: "Action",
                 accessor: "",
-                width: 100,
+                maxWidth: 100,
                 
                 Cell: function(props) {
                     return (
@@ -134,12 +134,13 @@ export default class FabricsSearch extends React.Component {
             );
         }
         return (
-            <div className="container-fluid">
-                
+            <div className="row">
+                <Col></Col>
+                <Col className="searchTable">
                 {this.state.loading || !this.state.ports ? (
                     <div></div>
                 ) : (
-                    
+                        
                         <ReactTable  className="-striped -highlight"
                             data= { this.state.ports }
                             columns= { columns }
@@ -147,11 +148,15 @@ export default class FabricsSearch extends React.Component {
                             showPageSizeOptions= { true }
                             minRows= { 0 }
                             defaultFilterMethod={filterCaseInsensitive}
+                            maxWidth= {1000}
                            
                         />
                         
                 )}
+                </Col>
+                <Col></Col>
                 <br/>
+
             </div>
         )
     }

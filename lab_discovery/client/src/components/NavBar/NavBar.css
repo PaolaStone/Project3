@@ -1,15 +1,9 @@
-.hide{
-    visibility: hidden;
-}
-.col-sm-2 {
-    /* margin: 0px; */
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-top: 0px !important;
-    padding-bottom: 15px !important;
-    
+.sticky{
+    position: sticky;
+    top: 0;
 }
 .navbar {
+    
     margin: 0px;
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -25,52 +19,9 @@
     padding-top: 0px !important;
     padding-bottom: 10px !important;
 }
-.jumbotron {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    background-color: darkgray !important;
-    border-radius: 0 !important;
-}
-.CardTitle{
-    border-radius: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    text-align: center;
-    font-size: 25px;
-    margin: 0px !important;
-}
-
-
 
 .inMenu {
-    font-size: 15px !important;
+    font-size: 20px !important;
     text-align: center;
     padding-bottom: 0!important;
-}
-.col-md-2 {
-    text-align: left;
-    padding-top: 0px !important;
-    padding-bottom: 15px !important;
-}
-.col-md-9 {
-    color: gray;
-    padding-top: 0px !important;
-    padding-bottom: 15px !important;
-}
-.col-md-1 {
-    padding-top: 0px !important;
-    padding-bottom: 15px !important;
-}
-.card{
-    border-radius: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    text-align: center;
-   
 }

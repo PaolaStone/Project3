@@ -3,7 +3,7 @@ import React from 'react'
 import ReactTable  from 'react-table'
 import 'react-table/react-table.css'
 import { Col, Row } from 'reactstrap';
-
+import "./ReservePorts.css";
 
 
 export default class ReservePorts extends React.Component {
@@ -119,8 +119,8 @@ export default class ReservePorts extends React.Component {
         }
         return (
             <div className="container">
-                <Row>
-              <Col xs="6">
+                
+              <Col className="allPorts">
               {this.state.loading || !this.state.switchPorts ? (
                     <div></div>
                 ) : (
@@ -138,7 +138,7 @@ export default class ReservePorts extends React.Component {
                 )}
                   </Col>
 
-                <Col cs="6">
+                <Col className="mdaPorts">
                 {this.state.loading || !this.state.mdaPorts ? (
                     <div></div>
                 ) : (
@@ -155,8 +155,8 @@ export default class ReservePorts extends React.Component {
                         
                 )}
                 </Col>  
-                </Row>
-                <br/>
+                
+               
             </div>
         )
     }

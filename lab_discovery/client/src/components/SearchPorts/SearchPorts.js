@@ -162,7 +162,7 @@ export default class Search extends React.Component {
 
             </ModalBody>
             <ModalFooter>
-                <Button color="primary" onClick={this.toggle}>Save </Button>{' '}
+                <Button color="primary" onClick={this.toggle}>Save </Button>
                 <Button color="secondary" onClick={this.toggle}>Cancel</Button>
             </ModalFooter>
         </Modal>

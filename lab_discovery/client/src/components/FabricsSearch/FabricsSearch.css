@@ -1,4 +1,11 @@
-.hide{
-    visibility: hidden;
+.container-fluid{
+    width: 50vw;
+    height: 100vh;
+    margin: 10px 300px 5px 300px
+    
+    
+};
+
+.rt-head{
+    width: 80vw !important;
 }
-  

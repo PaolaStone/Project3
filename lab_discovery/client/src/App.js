@@ -71,9 +71,7 @@ class App extends Component {
 					{ this.state.loggedIn && (
 					<div>
 						<NavBar user={this.state.user} logout={this.logout}/>
-						{/* <div className="main-view"> */}
-							
-						{/* </div> */}
+						
 					</div>
 					)}
 					{ !this.state.loggedIn && (
