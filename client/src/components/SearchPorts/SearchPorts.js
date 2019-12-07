@@ -60,13 +60,10 @@ export default class Search extends React.Component {
     function findBiId () {
        const url = '/api/ports/'
        fetch(url+id)
-       .then(function (response) {
-           
-           return response.json()
-        //    const data = response.json
-          
-       }
-       )
+       .then(response => response.json())
+       .then(data => {
+           console.log(data)
+       })
        
     }
     

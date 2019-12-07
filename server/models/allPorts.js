@@ -40,13 +40,13 @@ const allPortsSchema = new Schema({
 
 const allPorts = mongoose.model('allPorts', allPortsSchema);
 
-allPorts.create(data)
-    .then(function(dballPorts) {
-        console.log(dballPorts)
-    })
-    .catch(function(err) {
-        console.log(err.message)
-    })
+// allPorts.create(data)
+//     .then(function(dballPorts) {
+//         console.log(dballPorts)
+//     })
+//     .catch(function(err) {
+//         console.log(err.message)
+//     })
 
 
 module.exports = allPorts;
