@@ -31,7 +31,16 @@ export default class FabricsSearch extends React.Component {
     render() {
         
         const columns = [
-            
+            {
+                Header: "id",
+                accessor: "_id",
+                resizable: false,
+                width: 100,
+                sortable: true,
+                multiSort: true,
+                filterable: true,
+                show:false
+            },
             {
                 Header: "Switch Name",
                 accessor: "SwitchName",

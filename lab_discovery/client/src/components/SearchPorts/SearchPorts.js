@@ -5,19 +5,21 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Col, Form, FormGrou
 export default class Search extends React.Component {
    
     SearchPort = () => {
-        
-        const SearchObject = {
+        this.state = {
+            id: this.props.id,
             SwitchName: this.props.SwitchName,
             Port: this.props.Port,
             Status: this.props.Status,
             SystemName_Port: this.props.SystemName_Port,
             SystemWWN: this.props.SystemWWN,
             AirRackName: this.props.AirRackName,
-            AirRackPort: this.props.AirRackPort
+            AirRackPort: this.props.AirRackPort,
+            
         }
-        console.log("this is SearchObject " + JSON.stringify(SearchObject))
+        
+        this.handleChange = this.handleChange.bind(this)
+        console.log("this is this.state on searchPOrt" + JSON.stringify(this.state))
     }
-
     state = {
         modal : false,
     }
@@ -28,29 +30,56 @@ export default class Search extends React.Component {
   
     closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
     
-    constructor() {
-        super();
-        this.state = {
-            SwitchName: "",
-            Port: "",
-            Status: "",
-            SystemName_Port: "",
-            SystemWWN: "",
-            AirRackName: "",
-            AirRackPort: ""
-        }
-        this.handleChange = this.handleChange.bind(this)
-        
-    }
-
-    
     handleChange (e) {
         this.setState(
-            {[e.target.name]: e.target.value }
-        )
-        
-    } 
+             {[e.target.name]: e.target.value }
+         )
+        console.log("this is target " + e.target.name + " and  " + e.target.value)
+ 
+         
+     } 
     
+    editSaveBtn = () => {
+        const editedData = {
+            id : this.props.id,
+            SwitchName : this.props.SwitchName,
+            Port : this.props.Port,
+            Status : this.state.StatusInput,
+            SystemName_Port : this.state.System_PortInput,
+            SystemWWN : this.state.SystemWWNInput,
+            AirRackName : this.state.AirRackNameInput,
+            AirRackPort : this.state.AirRackPortInput
+        }
+
+    console.log("this is editData on btn  "  + JSON.stringify(editedData))
+
+    console.log("this is this.props.id  : " + this.props.id )
+    
+    const id = this.props.id
+    
+    function findBiId () {
+       const url = '/api/ports/'
+       fetch(url+id)
+       .then(function (response) {
+           
+           return response.json()
+        //    const data = response.json
+          
+       }
+       )
+       
+    }
+    
+    findBiId()
+    
+    
+   
+    
+}
+
+editPort = () => {
+
+}
     
     
     render() {
@@ -162,7 +191,7 @@ export default class Search extends React.Component {
 
             </ModalBody>
             <ModalFooter>
-                <Button color="primary" onClick={this.toggle}>Save </Button>
+            <Button color="primary" onClick={ () => {this.toggle(); this.editSaveBtn()}}>Save </Button>
                 <Button color="secondary" onClick={this.toggle}>Cancel</Button>
             </ModalFooter>
         </Modal>

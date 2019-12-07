@@ -48,7 +48,7 @@ const NavBar = (props) => {
             </div>
           </Col>
         </nav>
-         
+         <br/>
       
           
         <Switch>

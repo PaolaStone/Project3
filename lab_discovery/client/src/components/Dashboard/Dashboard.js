@@ -18,23 +18,23 @@ export default class Dashboard extends React.Component {
     return (
       <div className="container">
       <div className="wrapper ">
-        <div class="box item1">
+        <div className="box item1">
                   Fabrics
                   
                   <Link className="inMenu" to= {'/Search'}> |Search </Link>  |
                   <Link className="inMenu"to= {'/ReservePorts'}> Reserve |</Link>
         </div>
-        <div class="box item2">
+        <div className="box item2">
                 Maps
                 
                 <Link className="inMenu" to= {'/Maps'}> | Lab 1  </Link> |
                 <Link className="inMenu"to= {'#'}> Lab 3  |</Link>
               </div>
             
-              <div class="box item3">Network</div>
-           <div class="box item4">Wiki</div>
-            <div class="box item5">Import</div>
-            <div class="box item6">Add</div>
+              <div className="box item3">Network</div>
+           <div className="box item4">Wiki</div>
+            <div className="box item5">Import</div>
+            <div className="box item6">Add</div>
                       
         <Switch>
         {/*     <Route exact path='/Dashboard' component={ Dashboard } /> */}
