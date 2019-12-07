@@ -37,12 +37,12 @@ const mdaPortsSchema = new Schema({
 const mdaPorts = mongoose.model('mdaPorts', mdaPortsSchema);
 
 
-// mdaPorts.create(data)
-//     .then(function(dbmdaPorts) {
-//         console.log(dbmdaPorts)
-//     })
-//     .catch(function(err) {
-//         console.log(err.message)
-//     })
+mdaPorts.create(data)
+    .then(function(dbmdaPorts) {
+        console.log(dbmdaPorts)
+    })
+    .catch(function(err) {
+        console.log(err.message)
+    })
     
 module.exports = mdaPorts;
