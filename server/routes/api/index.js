@@ -1,9 +1,3 @@
-// const express = require('express');
-// const router = express.Router();
-
-// const opensController = require("../../controllers/opensController");
-// const mdasController = require("../../controllers/mdasController");
-// const editController = require("../../controllers/editController")
 const router = require("express").Router();
 const portsController = require("../../controllers/portsController");
 

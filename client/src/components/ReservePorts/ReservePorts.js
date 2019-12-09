@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactTable  from 'react-table'
 import 'react-table/react-table.css'
-import { Col } from 'reactstrap';
+import { Col, Row, Button, Container } from 'reactstrap';
 import "./ReservePorts.css";
 
 
@@ -112,45 +112,57 @@ export default class ReservePorts extends React.Component {
             );
         }
         return (
-            <div className="container">
-                
-              <Col className="allPorts">
-              {this.state.loading || !this.state.switchPorts ? (
-                    <div></div>
-                ) : (
-                    
-                        <ReactTable  className="-striped -highlight"
-                            data= { this.state.switchPorts }
-                            columns= { columns }
-                            defaultPageSize= { 10 }
-                            showPageSizeOptions= { true }
-                            minRows= { 0 }
-                            defaultFilterMethod={filterCaseInsensitive}
-                           
-                        />
+            <div>
+                <Row>
+                    <Col md="4"></Col>
+                    <Col md="4">
+                        <Button color="secondary" size="lg" block>Click after selecting the ports needed to complete reserve</Button>
+                    </Col>
+                    <Col md="4"></Col>    
                         
-                )}
-                  </Col>
+                </Row>
+                <br/>
 
-                <Col className="mdaPorts">
-                {this.state.loading || !this.state.mdaPorts ? (
-                    <div></div>
-                ) : (
-                    
-                        <ReactTable  className="-striped -highlight"
-                            data= { this.state.mdaPorts }
-                            columns= { columns1 }
-                            defaultPageSize= { 10 }
-                            showPageSizeOptions= { true }
-                            minRows= { 0 }
-                            defaultFilterMethod={filterCaseInsensitive}
-                           
-                        />
+                <Row className="columnsRow">
+                    <Col xs="2"></Col>
+                    <Col className="allPorts" xs="4">
+                        {this.state.loading || !this.state.switchPorts ? (
+                            <div></div>
+                        ) : (
                         
-                )}
-                </Col>  
+                            <ReactTable  className="-striped -highlight"
+                                data= { this.state.switchPorts }
+                                columns= { columns }
+                                defaultPageSize= { 10 }
+                                showPageSizeOptions= { true }
+                                minRows= { 0 }
+                                defaultFilterMethod={filterCaseInsensitive}
+                            
+                            />
+                            
+                        )}
+                    </Col>
+
+                    <Col className="mdaPorts" xs="4">
+                    {this.state.loading || !this.state.mdaPorts ? (
+                        <div></div>
+                    ) : (
+                        
+                            <ReactTable  className="-striped -highlight"
+                                data= { this.state.mdaPorts }
+                                columns= { columns1 }
+                                defaultPageSize= { 10 }
+                                showPageSizeOptions= { true }
+                                minRows= { 0 }
+                                defaultFilterMethod={filterCaseInsensitive}
+                            
+                            />
+                            
+                    )}
+                    </Col>  
+                    <Col xs="2"></Col>
                 
-               
+                </Row>
             </div>
         )
     }
