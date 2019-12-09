@@ -75,7 +75,7 @@ class App extends Component {
 					</div>
 					)}
 					{ !this.state.loggedIn && (
-					<div className="auth-wrapper" style={{paddingTop:40}}>
+					<div className="auth-wrapper" style={{paddingTop:"10"}}>
 						<Route exact path="/" component={() => <LoginForm login={this.login}/>} />
 						<Route exact path="/login" component={() => <LoginForm user={this.login}/>} />
 						<Route exact path="/signup" component={SignupForm} />

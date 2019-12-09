@@ -9,7 +9,7 @@ export default {
     return axios.post('/api/ports/${id}', {
         body:JSON
     }).then(function (response) {
-        console.log(response)
+        console.log("where is this" + response)
     })
     .catch(function (error) {
         console.log(error)

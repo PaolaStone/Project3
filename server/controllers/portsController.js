@@ -22,16 +22,11 @@ module.exports = {
       .findByIdAndUpdate(req.params.id, req.body, function (err,post){
           if (err) return next(err)
           res.json(post)
-          console.log(res)
-          console.log("it made it to controllers")
+          // console.log(res)
+          // console.log("it made it to controllers")
 
       })
-      
-      
-      // .then(dbModel => res.json(dbModel))
-      // .catch(err => res.status(422).json(err))
-      
-
+     
 },
 
 

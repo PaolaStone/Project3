@@ -1,0 +1,63 @@
+.loginContainer{
+    background-color: #37474F !important;
+    
+}
+
+.intro{
+    border-right: 3px solid #4B515D ;
+    text-align: right;
+    padding-right: 60px !important;
+    
+}
+.title{
+    font-family:Courier New;
+    color: #e0e0e0;
+    font-size: 60px;
+}
+.content{
+    font-family:Courier New;
+    color: #e0e0e0;
+    font-size: 25px;
+}
+.loginCol{
+    padding-left: 60px !important;
+}
+.rowLogin{
+    margin: 150px 20px 60px 20px !important;
+    
+
+}
+.card{
+    border:none !important;
+    width: 300px;
+}
+.cardTitle{
+    background-color: #37474F !important
+}
+.formLogin{
+    background-color: #37474F !important;
+    
+}
+.formUser, .formPassword{
+    background-color: #37474F;
+    font-family:Courier New;
+    color: #e0e0e0;
+    border: none;
+    border-bottom: 2px solid #4B515D ;
+}
+
+.card-body{
+    background-color: #37474F;
+    
+}
+.loginBtn{
+    background-color:#ffc400;
+    color: #37474F;
+    font-family:Courier New;
+    border-radius: 4px;
+    font-size: 20px;
+}
+.link{
+    color: #e0e0e0;
+    font-family:Courier New;
+}

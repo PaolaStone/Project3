@@ -147,7 +147,8 @@ export default class FabricsSearch extends React.Component {
                     <div></div>
                 ) : (
                         
-                        <ReactTable  className="-striped -highlight"
+                        <ReactTable  
+                            className="-striped -highlight"
                             data= { this.state.ports }
                             columns= { columns }
                             defaultPageSize= { 10 }
