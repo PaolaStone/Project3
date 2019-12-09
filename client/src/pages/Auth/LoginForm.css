@@ -1,12 +1,14 @@
 .loginContainer{
     background-color: #37474F !important;
+    height: 100%;
+    width: 100%;
     
 }
 
 .intro{
     border-right: 3px solid #4B515D ;
     text-align: right;
-    padding-right: 60px !important;
+    padding: 70px 60px 40px 0 !important;
     
 }
 .title{
@@ -20,7 +22,7 @@
     font-size: 25px;
 }
 .loginCol{
-    padding-left: 60px !important;
+    padding: 70px 0 40px 60px !important;
 }
 .rowLogin{
     margin: 150px 20px 60px 20px !important;

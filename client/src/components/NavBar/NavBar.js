@@ -1,7 +1,7 @@
 import React, { Fragment} from "react";
 import { BrowserRouter as Router, Switch, Route,Link } from 'react-router-dom';
 // import { Col } from '../Grid';
-import { Col, Row } from 'reactstrap';
+import { Col } from 'reactstrap';
 import "./NavBar.css";
 
 import Dashboard from '../Dashboard'
@@ -18,7 +18,7 @@ const NavBar = (props) => {
 		greeting = <p>Hello guest</p>
 	} else if (props.user.firstName) {
 		greeting = (
-			<Fragment>
+			<Fragment >
 				Welcome back,  <strong>{props.user.firstName}</strong>
 			</Fragment>
 		)
@@ -38,12 +38,12 @@ const NavBar = (props) => {
             <Link to={'/Dashboard'}  className="navbar-brand">Home</Link>
           </Col>
           <Col sm="7">
-              <div className="float-right">
+              <div className="float-right welcomeNavbar">
                 {greeting}
               </div>
           </Col>
           <Col sm="1">
-            <div className="float-right">
+            <div className="float-right logoutNavbar">
               <Link to="/Login" className="logout" onClick={props.logout}>Logout</Link>
             </div>
           </Col>

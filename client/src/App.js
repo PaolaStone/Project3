@@ -4,6 +4,7 @@ import LoginForm from './pages/Auth/LoginForm';
 import SignupForm from './pages/Auth/SignupForm';
 import NavBar from "./components/NavBar";
 import AUTH from './utils/AUTH';
+import Dashboard from './components/Dashboard';
 
 
 
@@ -71,7 +72,7 @@ class App extends Component {
 					{ this.state.loggedIn && (
 					<div>
 						<NavBar user={this.state.user} logout={this.logout}/>
-						
+												
 					</div>
 					)}
 					{ !this.state.loggedIn && (

@@ -6,7 +6,7 @@
     border-radius: 0 ;
     padding-top: 5px ;
     padding-bottom: 10px ;
-    background-color: #ffab00 !important;
+    background-color:  #37474F!important;
     position: fixed;
     top: 0;
     width: 100%;
@@ -20,12 +20,21 @@
     padding-top: 0px !important;
     padding-bottom: 10px !important;
     text-align: left;
-    color: grey;
+    color:  #fff;;
     font-size: 35px !important;
 }
 
 .inMenu {
-    font-size: 20px !important;
+    font-size: 30px !important;
     text-align: center;
     padding-bottom: 0!important;
+    color:#e0e0e0;
+    font-weight: 550;
+}
+.welcomeNavbar{
+    font-size: 20px !important; 
+    color:white;
+}
+.logoutNavbar{
+    font-size: 20px ;
 }

@@ -1,8 +1,7 @@
 import React from 'react'
-// import styled from 'styled-components'
 import ReactTable  from 'react-table'
 import 'react-table/react-table.css'
-import { Col, Row } from 'reactstrap';
+import { Col } from 'reactstrap';
 import "./ReservePorts.css";
 
 
@@ -23,8 +22,6 @@ export default class ReservePorts extends React.Component {
         // console.log("this is response " + response)
         const data = await response.json();
         
-        // console.log("this is data " + JSON.stringify(data))
-        // console.log(response.status)
         this.setState({switchPorts: data.opens, loading: false})
         const url1 = '/api/mdas'
         const response1 = await fetch(url1);
@@ -37,11 +34,6 @@ export default class ReservePorts extends React.Component {
         this.setState({mdaPorts: data1.mdas, loading: false})
 
     }
-
-    // async componentDidMount(){
-        
-
-    // }
 
     render() {
         const columns = [

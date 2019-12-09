@@ -1,7 +1,5 @@
 import React from 'react'
-// import styled from 'styled-components'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Col, Form, FormGroup, Label, Input } from 'reactstrap';
-import API from "../../utils/API";
 import Axios from 'axios';
 
 export default class Search extends React.Component {
@@ -20,10 +18,7 @@ export default class Search extends React.Component {
         }
         
         this.handleChange = this.handleChange.bind(this)
-       
     }
-
-   
     state = {
         modal : false,
     }
@@ -40,159 +35,136 @@ export default class Search extends React.Component {
         )
      } 
     
-    async componentDidMount () {
+    update =   id => {
+        const portData = {
+            id : this.props.id,
+            SwitchName : this.props.SwitchName,
+            Port : this.props.Port,
+            Status : this.state.StatusInput,
+            SystemName_Port : this.state.System_PortInput,
+            SystemWWN : this.state.SystemWWNInput,
+            AirRackName : this.state.AirRackNameInput,
+            AirRackPort : this.state.AirRackPortInput
 
-                
         }
-        update =   id => {
-            
-            // console.log("this is this.props.id  : " + this.props.id )
+         // const newPortData = JSON.stringify(portData)
+         // console.log ("This is is portData  " + newPortData)
+        const url = '/api/ports/'
         
-                // console.log("clicked")
-                const portData = {
-                    id : this.props.id,
-                    SwitchName : this.props.SwitchName,
-                    Port : this.props.Port,
-                    Status : this.state.StatusInput,
-                    SystemName_Port : this.state.System_PortInput,
-                    SystemWWN : this.state.SystemWWNInput,
-                    AirRackName : this.state.AirRackNameInput,
-                    AirRackPort : this.state.AirRackPortInput
-
-                }
-                // const newPortData = JSON.stringify(portData)
-                // console.log ("This is is portData  " + newPortData)
-                
-                
-                
-
-                const url = '/api/ports/'
-               
-                
-                Axios.put(url+this.props.id,  portData )
-                .then  ((result) => {
-                    // console.log ("Data " + JSON.stringify(result))
-                })
-
-               
-        }
+        Axios.put(url+this.props.id,  portData )
+            .then  ((result) => {
+                // console.log ("Data " + JSON.stringify(result))
+            })
+    }
 
     render() {
-        
         return (
-        
         <div>
-        <Button color="danger" onClick={ () => {this.toggle(); this.SearchPort()}} >Edit</Button>
-       
-        <Modal isOpen={this.state.modal} toggle={this.toggle} >
-            <ModalHeader toggle={this.toggle} close={this.closeBtn}>Port Information</ModalHeader>
-            <ModalBody>
-            <Form>
-                <FormGroup row>
-                    <Label for="SwitchName" sm={4}>Switch Name</Label>
-                    <Col sm={8}>
-                        <Input 
-                            type="text" 
-                            name="SwitchNameInput" 
-                            id="SwitchName" 
-                            readOnly value={ this.props.SwitchName}
-                            
-                        />
-                    </Col>
-                </FormGroup>
+            <Button color="danger" onClick={ () => {this.toggle(); this.SearchPort()}} >Edit</Button>
+        
+            <Modal isOpen={this.state.modal} toggle={this.toggle} >
+                <ModalHeader toggle={this.toggle} close={this.closeBtn}>Port Information</ModalHeader>
+                <ModalBody>
+                    <Form>
+                        <FormGroup row>
+                            <Label for="SwitchName" sm={4}>Switch Name</Label>
+                            <Col sm={8}>
+                                <Input 
+                                    type="text" 
+                                    name="SwitchNameInput" 
+                                    id="SwitchName" 
+                                    readOnly value={ this.props.SwitchName}
+                                    
+                                />
+                            </Col>
+                        </FormGroup>
 
-                <FormGroup row>
-                    <Label for="Port" sm={4}>Port</Label>
-                    <Col sm={8}>
-                        <Input 
-                            type= "text" 
-                            name= "PortInput" 
-                            id= "Port"
-                            readOnly value= { this.props.Port }
-                             
-                        />
-                    </Col>
-                </FormGroup>
+                        <FormGroup row>
+                            <Label for="Port" sm={4}>Port</Label>
+                            <Col sm={8}>
+                                <Input 
+                                    type= "text" 
+                                    name= "PortInput" 
+                                    id= "Port"
+                                    readOnly value= { this.props.Port }
+                                    
+                                />
+                            </Col>
+                        </FormGroup>
 
-                <FormGroup row>
-                    <Label for="Status" sm={4}>Status</Label>
-                    <Col sm={8}>
-                        <Input 
-                            type= "text" 
-                            name= "StatusInput" 
-                            id= "Status" 
-                            defaultValue= { this.props.Status }
-                            onChange={ this.handleChange }
-                            
-                        />
-                    </Col>
-                </FormGroup>
+                        <FormGroup row>
+                            <Label for="Status" sm={4}>Status</Label>
+                            <Col sm={8}>
+                                <Input 
+                                    type= "text" 
+                                    name= "StatusInput" 
+                                    id= "Status" 
+                                    defaultValue= { this.props.Status }
+                                    onChange={ this.handleChange }
+                                    
+                                />
+                            </Col>
+                        </FormGroup>
 
-                <FormGroup row>
-                    <Label for="System_Port" sm={4}>System and port</Label>
-                    <Col sm={8}>
-                        <Input 
-                            type= "text" 
-                            name= "System_PortInput" 
-                            id= "System_Port" 
-                            defaultValue = { this.props.SystemName_Port }
-                            onChange = { this.handleChange }
-                        />
-                    </Col>
-                </FormGroup>
+                        <FormGroup row>
+                            <Label for="System_Port" sm={4}>System and port</Label>
+                            <Col sm={8}>
+                                <Input 
+                                    type= "text" 
+                                    name= "System_PortInput" 
+                                    id= "System_Port" 
+                                    defaultValue = { this.props.SystemName_Port }
+                                    onChange = { this.handleChange }
+                                />
+                            </Col>
+                        </FormGroup>
 
-                <FormGroup row>
-                    <Label for="SystemWWN" sm={4}>Port wwn</Label>
-                    <Col sm={8}>
-                        <Input 
-                            type= "text" 
-                            name= "SystemWWNInput" 
-                            id= "SystemWWN"
-                            defaultValue = { this.props.SystemWWN }
-                            onChange = { this.handleChange }
-                        />
-                    </Col>
-                </FormGroup>
+                        <FormGroup row>
+                            <Label for="SystemWWN" sm={4}>Port wwn</Label>
+                            <Col sm={8}>
+                                <Input 
+                                    type= "text" 
+                                    name= "SystemWWNInput" 
+                                    id= "SystemWWN"
+                                    defaultValue = { this.props.SystemWWN }
+                                    onChange = { this.handleChange }
+                                />
+                            </Col>
+                        </FormGroup>
 
-                <FormGroup row>
-                    <Label for="AirRackName" sm={4}>Air Rack Name</Label>
-                    <Col sm={8}>
-                        <Input 
-                            type= "text" 
-                            name= "AirRackNameInput" 
-                            id= "AirRackName"
-                            defaultValue = { this.props.AirRackName }
-                            onChange = { this.handleChange }
-                        />
-                    </Col>
-                </FormGroup>
+                        <FormGroup row>
+                            <Label for="AirRackName" sm={4}>Air Rack Name</Label>
+                            <Col sm={8}>
+                                <Input 
+                                    type= "text" 
+                                    name= "AirRackNameInput" 
+                                    id= "AirRackName"
+                                    defaultValue = { this.props.AirRackName }
+                                    onChange = { this.handleChange }
+                                />
+                            </Col>
+                        </FormGroup>
 
-                <FormGroup row>
-                    <Label for="AirRackPort" sm={4}>Air Rack Port</Label>
-                    <Col sm={8}>
-                        <Input 
-                            type= "text" 
-                            name= "AirRackPortInput" 
-                            id= "AirRackPort"
-                            defaultValue = { this.props.AirRackPort }
-                            onChange = { this.handleChange }
-                        />
-                    </Col>
-                </FormGroup>
+                        <FormGroup row>
+                            <Label for="AirRackPort" sm={4}>Air Rack Port</Label>
+                            <Col sm={8}>
+                                <Input 
+                                    type= "text" 
+                                    name= "AirRackPortInput" 
+                                    id= "AirRackPort"
+                                    defaultValue = { this.props.AirRackPort }
+                                    onChange = { this.handleChange }
+                                />
+                            </Col>
+                        </FormGroup>
+                    </Form>
 
-                 
-                {/* <Button>Sign in</Button> */}
-                </Form>
-
-            </ModalBody>
-            <ModalFooter>
-        <Button color="primary" onClick={ () => {this.toggle(); this.update(this._id);}}>Save </Button>
-                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-            </ModalFooter>
-        </Modal>
-    </div>
-
-           
-    )
-    }
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={ () => {this.toggle(); this.update(this._id);}}>Save </Button>
+                    <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                </ModalFooter>
+            </Modal>
+        </div>
+    )}
 }

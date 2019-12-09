@@ -1,9 +1,8 @@
 import React from 'react'
-// import styled from 'styled-components'
 import ReactTable  from 'react-table'
 import 'react-table/react-table.css'
 import Search from '../SearchPorts'
-import { Col, Row } from 'reactstrap';
+import { Col } from 'reactstrap';
 
 export default class FabricsSearch extends React.Component {
     state = {
@@ -143,10 +142,10 @@ export default class FabricsSearch extends React.Component {
             <div className="row">
                 <Col></Col>
                 <Col className="searchTable">
-                {this.state.loading || !this.state.ports ? (
-                    <div></div>
-                ) : (
-                        
+                    {this.state.loading || !this.state.ports ? (
+                        <div></div>
+                    ) : (
+                            
                         <ReactTable  
                             className="-striped -highlight"
                             data= { this.state.ports }
@@ -156,14 +155,12 @@ export default class FabricsSearch extends React.Component {
                             minRows= { 0 }
                             defaultFilterMethod={filterCaseInsensitive}
                             maxWidth= {1000}
-                           
+                            
                         />
-                        
-                )}
+                    )}
                 </Col>
                 <Col></Col>
                 <br/>
-
             </div>
         )
     }
