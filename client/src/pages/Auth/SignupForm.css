@@ -1,0 +1,10 @@
+.signupContainer{
+    align-items: center;
+}
+.signupColumn{
+    align-items: center !important
+}
+.signupLabel{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}

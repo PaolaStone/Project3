@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
-import { Container, Row, Col } from '../../components/Grid';
+// import { Container, Row, Col } from '../../components/Grid';
 import { Card } from '../../components/Card';
+import { Container, Row, Col } from 'reactstrap'
 import { Input, FormBtn } from '../../components/Form';
 import AUTH from '../../utils/AUTH';
+import './SignupForm.css';
 
 class SignupForm extends Component {
 
@@ -52,12 +54,14 @@ class SignupForm extends Component {
     }
     
 		return (
-      <Container>
+      <div className="signupContainer">
         <Row>
-          <Col size="md-3"></Col>
-          <Col size="md-6">
+          <Col xs="4"></Col>
+          <Col className="signupColumn"xs="4">
+          <br/>
             <Card title="Register">
-              <form style={{marginTop: 10}}>
+              
+              <form className="signupLabel" style={{marginTop: 10}}>
                 <label htmlFor="username">First name: </label>
                 <Input
                   type="text"
@@ -65,28 +69,28 @@ class SignupForm extends Component {
                   value={this.state.firstName}
                   onChange={this.handleChange}
                 />
-                <label htmlFor="username">Last name: </label>
+                <label className="signupLabel" htmlFor="username">Last name: </label>
                 <Input
                   type="text"
                   name="lastName"
                   value={this.state.lastName}
                   onChange={this.handleChange}
                 />
-                <label htmlFor="username">Username: </label>
+                <label className="signupLabel" htmlFor="username">Username: </label>
                 <Input
                   type="text"
                   name="username"
                   value={this.state.username}
                   onChange={this.handleChange}
                 />
-                <label htmlFor="password">Password: </label>
+                <label className="signupLabel" htmlFor="password">Password: </label>
                 <Input
                   type="password"
                   name="password"
                   value={this.state.password}
                   onChange={this.handleChange}
                 />
-                <label htmlFor="confirmPassword">Confirm Password: </label>
+                <label className="signupLabel" htmlFor="confirmPassword">Confirm Password: </label>
                 <Input
                   type="password"
                   name="confirmPassword"
@@ -98,9 +102,9 @@ class SignupForm extends Component {
               </form>
             </Card>
           </Col>
-          <Col size="md-3"></Col>
+          <Col xs="4"></Col>
         </Row>
-      </Container>
+      </div>
 		)
 	}
 }

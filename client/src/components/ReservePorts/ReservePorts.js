@@ -12,7 +12,9 @@ export default class ReservePorts extends React.Component {
         switchPorts: [],
         columns: [],
         mdaPorts:[],
-        columns1:[]
+        columns1:[],
+        selectedSwitchPOrts: [],
+        selectedMdaPorts: []
     }
 
     async componentDidMount(){
@@ -81,7 +83,7 @@ export default class ReservePorts extends React.Component {
 
             },
             {
-                Header: "Air Rack NAme",
+                Header: "Air Rack Name",
                 accessor: "AirRackName",
                 resizable: false,
                 width: 285,
