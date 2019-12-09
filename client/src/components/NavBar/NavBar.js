@@ -3,12 +3,9 @@ import { BrowserRouter as Router, Switch, Route,Link } from 'react-router-dom';
 // import { Col } from '../Grid';
 import { Col } from 'reactstrap';
 import "./NavBar.css";
-
 import Dashboard from '../Dashboard'
 import ReservePorts from '../ReservePorts'
-
 import FabricsSearch from '../FabricsSearch'
-
 import Maps from '../Maps'
 
 const NavBar = (props) => {

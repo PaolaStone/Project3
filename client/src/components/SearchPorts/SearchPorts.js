@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Col, Form, FormGroup, Label, Input } from 'reactstrap';
 import Axios from 'axios';
+import './Search.css';
 
 export default class Search extends React.Component {
    
@@ -60,7 +61,7 @@ export default class Search extends React.Component {
     render() {
         return (
         <div>
-            <Button color="danger" onClick={ () => {this.toggle(); this.SearchPort()}} >Edit</Button>
+            <a className="editBtn" onClick={ () => {this.toggle(); this.SearchPort()}} >Edit</a>
         
             <Modal isOpen={this.state.modal} toggle={this.toggle} >
                 <ModalHeader toggle={this.toggle} close={this.closeBtn}>Port Information</ModalHeader>

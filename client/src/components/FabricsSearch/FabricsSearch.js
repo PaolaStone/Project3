@@ -3,6 +3,7 @@ import ReactTable  from 'react-table'
 import 'react-table/react-table.css'
 import Search from '../SearchPorts'
 import { Col } from 'reactstrap';
+import './FabricsSearch.css';
 
 export default class FabricsSearch extends React.Component {
     state = {
@@ -41,7 +42,7 @@ export default class FabricsSearch extends React.Component {
                 Header: "Switch Name",
                 accessor: "SwitchName",
                 resizable: false,
-                width: 285,
+                width: 270,
                 sortable: true,
                 multiSort: true,
                 filterable: true
@@ -50,7 +51,7 @@ export default class FabricsSearch extends React.Component {
                 Header: "Port",
                 accessor: "Port",
                 resizable: false,
-                width: 115,
+                width: 100,
                 sortable: true,
                 multiSort: true,
                 filterable: true
@@ -68,7 +69,7 @@ export default class FabricsSearch extends React.Component {
                 Header: "System_Port",
                 accessor: "SystemName_Port",
                 resizable: false,
-                width: 301,
+                width: 180,
                 sortable: true,
                 multiSort: true,
                 filterable: true
@@ -77,7 +78,7 @@ export default class FabricsSearch extends React.Component {
                 Header: "Port wwn",
                 accessor: "SystemWWN",
                 resizable: false,
-                width: 245,
+                width: 250,
                 sortable: true,
                 multiSort: true,
                 filterable: true
@@ -104,6 +105,7 @@ export default class FabricsSearch extends React.Component {
                 Header: "Action",
                 accessor: "",
                 maxWidth: 100,
+                
                 
                 Cell: function(props) {
                     return (

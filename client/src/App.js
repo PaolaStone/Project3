@@ -4,9 +4,6 @@ import LoginForm from './pages/Auth/LoginForm';
 import SignupForm from './pages/Auth/SignupForm';
 import NavBar from "./components/NavBar";
 import AUTH from './utils/AUTH';
-import Dashboard from './components/Dashboard';
-
-
 
 class App extends Component {
   
