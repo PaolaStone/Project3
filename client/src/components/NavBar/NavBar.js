@@ -1,7 +1,7 @@
 import React, { Fragment} from "react";
 import { BrowserRouter as Router, Switch, Route,Link } from 'react-router-dom';
-import { Col } from '../Grid';
-import { Card, CardTitle, CardText } from 'reactstrap';
+// import { Col } from '../Grid';
+import { Col, Row } from 'reactstrap';
 import "./NavBar.css";
 
 import Dashboard from '../Dashboard'
@@ -32,17 +32,17 @@ const NavBar = (props) => {
 
   return (
     <Router>
-      <div className="sticky">
-        <nav className="navbar navbar-dark bg-dark" style={{height: '80px'}} >
-          <Col size="md-2">
-            <Link to={'/Dashboard'}  className="navbar-brand">Home</Link>
+      <div>
+        <nav className="navbar">
+          <Col sm="4">
+            <Link to={'/Dashboard'}  className="navbar-brand">Home</Link>
           </Col>
-          <Col size="md-9">
+          <Col sm="7">
               <div className="float-right">
                 {greeting}
               </div>
           </Col>
-          <Col size="md-1">
+          <Col sm="1">
             <div className="float-right">
               <Link to="/Login" className="logout" onClick={props.logout}>Logout</Link>
             </div>
@@ -58,7 +58,7 @@ const NavBar = (props) => {
             <Route exact path='/Maps' component={ Maps} />
 
           </Switch>
-          {/* <Dashboard/> */}
+          
       </div>
       
       

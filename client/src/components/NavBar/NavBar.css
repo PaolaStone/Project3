@@ -1,23 +1,27 @@
-.sticky{
-    position: sticky;
-    top: 0;
-}
 .navbar {
-    
+    font-family:Courier New;
     margin: 0px;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    border-radius: 0 !important;
-    padding-top: 5px !important;
-    padding-bottom: 10px !important;
-    text-align: center;
-    background-color: black !important;
+    padding-left: 0 ;
+    padding-right: 0 ;
+    border-radius: 0 ;
+    padding-top: 5px ;
+    padding-bottom: 10px ;
+    background-color: #ffab00 !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
     /* font-size: 30px !important; */
+}
+.logout{
+    text-align: right;
 }
 
 .navbar-brand{
     padding-top: 0px !important;
     padding-bottom: 10px !important;
+    text-align: left;
+    color: grey;
+    font-size: 35px !important;
 }
 
 .inMenu {
