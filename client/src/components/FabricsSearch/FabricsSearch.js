@@ -6,9 +6,6 @@ import Search from '../SearchPorts'
 import { Col, Row } from 'reactstrap';
 
 export default class FabricsSearch extends React.Component {
-    
-    
-
     state = {
         loading: true,
         ports: [],

@@ -1,7 +1,9 @@
 import React from 'react'
 // import styled from 'styled-components'
-
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Col, Form, FormGroup, Label, Input } from 'reactstrap';
+import API from "../../utils/API";
+import Axios from 'axios';
+
 export default class Search extends React.Component {
    
     SearchPort = () => {
@@ -14,12 +16,13 @@ export default class Search extends React.Component {
             SystemWWN: this.props.SystemWWN,
             AirRackName: this.props.AirRackName,
             AirRackPort: this.props.AirRackPort,
-            
+            ports:[]
         }
         
         this.handleChange = this.handleChange.bind(this)
-        console.log("this is this.state on searchPOrt" + JSON.stringify(this.state))
+        // console.log("this is this.state on searchPOrt" + JSON.stringify(this.state))
     }
+
     state = {
         modal : false,
     }
@@ -33,51 +36,150 @@ export default class Search extends React.Component {
     handleChange (e) {
         this.setState(
              {[e.target.name]: e.target.value }
-         )
-        console.log("this is target " + e.target.name + " and  " + e.target.value)
- 
-         
-     } 
+        )
+        // console.log("this is target " + e.target.name + " and  " + e.target.value)
+      
+       
+    } 
     
-    editSaveBtn = () => {
-        const editedData = {
-            id : this.props.id,
-            SwitchName : this.props.SwitchName,
-            Port : this.props.Port,
-            Status : this.state.StatusInput,
-            SystemName_Port : this.state.System_PortInput,
-            SystemWWN : this.state.SystemWWNInput,
-            AirRackName : this.state.AirRackNameInput,
-            AirRackPort : this.state.AirRackPortInput
+    // editSaveBtn = () => {
+        // const editedData = {
+        //     id : this.props.id,
+        //     SwitchName : this.props.SwitchName,
+        //     Port : this.props.Port,
+        //     Status : this.state.StatusInput,
+        //     SystemName_Port : this.state.System_PortInput,
+        //     SystemWWN : this.state.SystemWWNInput,
+        //     AirRackName : this.state.AirRackNameInput,
+        //     AirRackPort : this.state.AirRackPortInput
+        // }
+
+        async componentDidMount () {
+
+                
+        }
+        update =   id => {
+            
+            console.log("this is this.props.id  : " + this.props.id )
+        
+                console.log("clicked")
+                const portData = {
+                    id : this.props.id,
+                    SwitchName : this.props.SwitchName,
+                    Port : this.props.Port,
+                    Status : this.state.StatusInput,
+                    SystemName_Port : this.state.System_PortInput,
+                    SystemWWN : this.state.SystemWWNInput,
+                    AirRackName : this.state.AirRackNameInput,
+                    AirRackPort : this.state.AirRackPortInput
+
+                }
+                const newPortData = JSON.stringify(portData)
+                console.log ("This is is portData  " + newPortData)
+                
+                
+                
+
+                const url = '/api/ports/'
+                // id: this.props.id
+                
+                Axios.put(url+this.props.id,  portData )
+                .then  ((result) => {
+                    console.log ("done " + JSON.stringify(result))
+                    
+                })
+
+                // fetch(url+this.props.id, {
+                //     method: 'POST',
+                //     headers: {'Content-Type': 'application/json'
+                // },
+                // body: JSON.stringify({newPortData}),
+                // })
+                //     .then((res) => {
+                //         if (res.ok) {
+                //             return res.json()
+                //         } else {
+                //             return Promise.reject({status: res.status, statusText: res.statusText})
+                //         }
+                //     }) 
+                //     .then ((data) => console.log(data))
+                //     .catch(err => console.log('Error message', err.statusText))
+
+                
+            
+        
+        
         }
 
-    console.log("this is editData on btn  "  + JSON.stringify(editedData))
 
-    console.log("this is this.props.id  : " + this.props.id )
-    
-    const id = this.props.id
-    
-    function findBiId () {
-       const url = '/api/ports/'
-       fetch(url+id)
-       .then(response => response.json())
-       .then(data => {
-           console.log(data)
-       })
        
-    }
-    
-    findBiId()
-    
-    
-   
-    
-}
+            
+            
 
-editPort = () => {
+            
 
-}
+            // API.update(id, function (req, res) {
+                
+            //     console.log("this is portData " +portData)
+            //     portData.save(function(err) {
+            //         if (err !== null) {
+            //             res.status(500).json({ error: "save failed", err: err});
+            //             return;
+            //         } else {
+            //             res.status(201).json(portData);
+            //         };
+            //     }); 
+            // })
+                
+                
+           
+
+        //  function findByIdAndUpdate () {
+            // const url = '/api/ports/'
+            // fetch(url+id)
+            // .then(response => response.json())
+            // .then(data => {
+            //     // console.log(data)
+            //         data = {
+            //             id : data._id,
+            //             SwitchName : data.SwitchName,
+            //             Port : data.Port,
+            //             Status : data.Status,
+            //             SystemName_Port : data.SystemName_Port,
+            //             SystemWWN : data.SystemWWN,
+            //             AirRackName : data.AirRackName,
+            //             AirRackPort : data.AirRackPort
+            //         }
+            //     console.log("this is original data  "  + JSON.stringify(data))
+            //     console.log("this is editData on btn  "  + JSON.stringify(editedData))
+            //     console.log(shallowCompare(data, editedData))
+
+            
+            // })
+
+            
+            
+        // }
+        // findByIdAndUpdate()
     
+
+    
+    
+    
+    
+
+    
+        
+       
+
+        // Object.entries(data).toString() === Object.entries(editedData).toString();
+        // console.log(JSON.stringify(data) === JSON.stringify(editedData))
+
+        
+        // 'Status', 'SystemName_Port', 'SystemWWN', 'AirRackName', 'AirRackPort'
+        //  'Status', 'SystemName_Port', 'SystemWWN', 'AirRackName', 'AirRackPort'
+    
+        
     
     render() {
         
@@ -188,7 +290,7 @@ editPort = () => {
 
             </ModalBody>
             <ModalFooter>
-            <Button color="primary" onClick={ () => {this.toggle(); this.editSaveBtn()}}>Save </Button>
+            <Button color="primary" onClick={ () => {this.toggle(); this.update(this._id)}}>Save </Button>
                 <Button color="secondary" onClick={this.toggle}>Cancel</Button>
             </ModalFooter>
         </Modal>
