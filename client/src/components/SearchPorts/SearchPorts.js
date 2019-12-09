@@ -63,8 +63,8 @@ export default class Search extends React.Component {
         <div>
             <a className="editBtn" onClick={ () => {this.toggle(); this.SearchPort()}} >Edit</a>
         
-            <Modal isOpen={this.state.modal} toggle={this.toggle} >
-                <ModalHeader toggle={this.toggle} close={this.closeBtn}>Port Information</ModalHeader>
+            <Modal className= "modalSearch" isOpen={this.state.modal} toggle={this.toggle} >
+                <ModalHeader  toggle={this.toggle} close={this.closeBtn}>Port Information</ModalHeader>
                 <ModalBody>
                     <Form>
                         <FormGroup row>
@@ -162,7 +162,7 @@ export default class Search extends React.Component {
 
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={ () => {this.toggle(); this.update(this._id);}}>Save </Button>
+                    <Button color="warning" onClick={ () => {this.toggle(); this.update(this._id);}}>Save </Button>
                     <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                 </ModalFooter>
             </Modal>
