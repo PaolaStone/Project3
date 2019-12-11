@@ -26,6 +26,10 @@ export default class FabricsSearch extends React.Component {
     }
     
     render() {
+
+        const changeTheFabricSearch = (ports) => {
+            this.setState({ports})
+        }
         
         const columns = [
             {
@@ -119,7 +123,7 @@ export default class FabricsSearch extends React.Component {
                                 SystemWWN={ props.original.SystemWWN }
                                 AirRackName={ props.original.AirRackName }
                                 AirRackPort={ props.original.AirRackPort }
-                                
+                                changeTheFabricSearch = {changeTheFabricSearch}
                             />
                         </span>
                     )

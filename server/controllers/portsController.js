@@ -21,7 +21,18 @@ module.exports = {
     db.allPorts
       .findByIdAndUpdate(req.params.id, req.body, function (err,post){
           if (err) return next(err)
-          res.json(post)
+          // console.log("POST!!!!!!!!!!!!!!!!!! ", post)
+          // db.allPorts.findById(req.params.id, (err, response) => {
+          //   console.log("RESPONSE!!! ", response)
+          // })
+          db.allPorts.find({ Status: { $ne: "Open" } } ).exec((err, allPorts) => {
+            if (err) {
+              return res.json();
+            }
+            console.log('all ', allPorts)
+            return res.json ({allPorts})
+          })
+          // res.json(post)
           // console.log(res)
           // console.log("it made it to controllers")
 

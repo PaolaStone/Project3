@@ -4,6 +4,7 @@ import LoginForm from './pages/Auth/LoginForm';
 import SignupForm from './pages/Auth/SignupForm';
 import NavBar from "./components/NavBar";
 import AUTH from './utils/AUTH';
+// const MyContext = React.createContext({ ports: ['test']})
 
 class App extends Component {
   
@@ -62,25 +63,29 @@ class App extends Component {
 	}
 
 	
+	
 	render() {
+		console.log('props ', this.props)
+
 		return (
+			// <MyContext.Provider value={{ports: ['test2']}}>
 			<Router>
 				<div className="App">
 					{ this.state.loggedIn && (
 					<div>
-						<NavBar user={this.state.user} logout={this.logout}/>
-												
+						<NavBar user={this.state.user} logout={this.logout}/>	
 					</div>
 					)}
 					{ !this.state.loggedIn && (
 					<div className="auth-wrapper" style={{paddingTop:"10"}}>
-						<Route exact path="/" component={() => <LoginForm login={this.login}/>} />
+						<Route exact path="/" component={() => <LoginForm login={this.login}/>} /> 
 						<Route exact path="/login" component={() => <LoginForm user={this.login}/>} />
 						<Route exact path="/signup" component={SignupForm} />
 					</div>
 					)}
 				</div>
 			</Router>
+			// </MyContext.Provider>
 		)
 	}
 }

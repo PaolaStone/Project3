@@ -53,12 +53,16 @@ export default class Search extends React.Component {
         const url = '/api/ports/'
         
         Axios.put(url+this.props.id,  portData )
-            .then  ((result) => {
-                // console.log ("Data " + JSON.stringify(result))
+            .then((result) => {
+                console.log ("Data ", result)
+                console.log('props ', this.props)
+                this.props.changeTheFabricSearch(result.data.allPorts)
+
             })
     }
 
     render() {
+        console.log('the props!!! ', this.props)
         return (
         <div>
             <a className="editBtn" onClick={ () => {this.toggle(); this.SearchPort()}} >Edit</a>
