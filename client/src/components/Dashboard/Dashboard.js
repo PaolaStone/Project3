@@ -5,7 +5,8 @@ import "./Dashboard.css";
 import ReservePorts from '../ReservePorts'
 import FabricsSearch from '../FabricsSearch'
 import Maps from '../Maps'
-
+import Wiki from '../Wiki'
+import Network from "../Network";
 
 export default class Dashboard extends React.Component {
   render(){
@@ -22,10 +23,10 @@ export default class Dashboard extends React.Component {
             Maps:
             <br/>
             <Link className="inMenu" to= {'/Maps'}>  Lab 1  </Link> |
-            <Link className="inMenu"to= {'#'}> Lab 3  </Link>
+            <Link className="inMenu"to= {'/Maps'}> Lab 3  </Link>
           </div>
-          <div className="box item3">Network</div>
-          <div className="box item4">Wiki</div>
+          <Link className="box item3" to={'/Network'}>Network</Link>
+          <Link className="box item4" to= {'/Wiki'}>Wiki</Link>
           <div className="box item5">Import</div>
           <div className="box item6">Add</div>
                         
@@ -33,6 +34,8 @@ export default class Dashboard extends React.Component {
               <Route exact path='/Search' component={ FabricsSearch } />
               <Route exact path='/ReservePorts' component={ ReservePorts } />
               <Route exact path='/Maps' component={ Maps} />
+              <Route exact path='/Wiki' component={ Wiki} />
+              <Route exact path='/Network' component={ Network} />
           </Switch>
         
           </div>

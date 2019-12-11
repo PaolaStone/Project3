@@ -7,6 +7,8 @@ import Dashboard from '../Dashboard'
 import ReservePorts from '../ReservePorts'
 import FabricsSearch from '../FabricsSearch'
 import Maps from '../Maps'
+import Wiki from '../Wiki'
+import Network from "../Network";
 
 const NavBar = (props) => {
   let greeting;
@@ -53,6 +55,8 @@ const NavBar = (props) => {
             <Route exact path='/Search' component={ FabricsSearch } />
             <Route exact path='/ReservePorts' component={ ReservePorts } />
             <Route exact path='/Maps' component={ Maps} />
+            <Route exact path='/Wiki' component={ Wiki} />
+            <Route exact path='/Network' component={ Network} />
 
           </Switch>
           
