@@ -92,7 +92,7 @@ export default class ReservePorts extends React.Component {
                 filterable: true
             },
             {
-                Header: "Air Rack Port",
+                Header: "Port",
                 accessor: "AirRackPort",
                 resizable: false,
                 width: 115,
@@ -114,11 +114,11 @@ export default class ReservePorts extends React.Component {
         return (
             <div>
                 <Row>
-                    <Col md="4"></Col>
-                    <Col md="4">
-                        <Button color="secondary" size="lg" block>Click after selecting the ports needed to complete reserve</Button>
+                    <Col md="3"></Col>
+                    <Col md="6">
+                        <Button color="secondary" size="lg" block>Click after selecting the ports needed to complete reservation</Button>
                     </Col>
-                    <Col md="4"></Col>    
+                    <Col md="3"></Col>    
                         
                 </Row>
                 <br/>
